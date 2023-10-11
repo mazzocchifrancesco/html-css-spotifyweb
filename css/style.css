@@ -1,14 +1,76 @@
 :root {
     --footer-height: 100px;
+    --nav-width: 200px;
+    --upgrade-bar-height: 80px;
+
+
 }
 
+/*********************** SIDE NAVBAR ***********************/
 
+nav {
+    height: calc(100% - var(--footer-height));
+    width: var(--nav-width);
+    padding: 10px;
+}
+nav > img {
+    width: 80%;
+}
 
+#nav-button a,
+#playlist a {
+    font-size: 1.25rem;
+    text-decoration: none;
+    display: block;
+    color: white;
+    padding: 6px 0;
+}
 
+/*********************** UPGRADE BAR ***********************/
+#upgrade-bar {
+    width: 100%;
+    height: var(--upgrade-bar-height);
+  
+}
 
+/*********************** APP CORE ***********************/
 
-/*********************** FOOTER  *************/
+#app-core {
+    width: calc(100% - var(--nav-width));
+    height: calc(100% - var(--footer-height));
+    overflow-y: auto;
+
+}
+
+/* selector bar  */
+
+#selector-bar a{
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0 10px;
+    color: grey;
+}
+
+/* recently played */
+
+#song-row {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.song-container img {
+    height: 80%;
+}
+.song-container {
+    height: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+/*********************** FOOTER ***********************/
 
 footer {
     height: var(--footer-height);
+    width: 100%;
 }

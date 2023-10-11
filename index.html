@@ -9,12 +9,132 @@
     <title>Spotify</title>
 </head>
 <body>
-    <main class="d-flex vh-100">
-        <nav class="bg-blue">
-        </nav>
-        <div id="app-core" class="bg-green">
+    <main class="d-flex vh-100 flex-wrap">
 
-        </div>
+        <!------------------------ SIDE NAVBAR  ------------------>
+        <nav class="bg-orangered d-flex flex-column">
+            <img src="img/logo.svg" alt="logo">
+
+            <!-- nav buttons  -->
+            <div id="nav-button" class="py-16">
+                <a href=""><i class="fa-solid fa-house"></i> Home</a>
+                <a href=""><i class="fa-solid fa-house"></i> Home</a>
+                <a href=""><i class="fa-solid fa-house"></i> Home</a>
+            </div>
+
+            <!-- playlist  -->
+            <div id="playlist">
+                <h3>PLAYLIST</h3>
+
+                <!-- crea playlist  -->
+                <div class="d-flex flex-items-center">
+                    <div class="p-6 bg-red lh-100">+</div>
+                    <p class="px-16">Crea Playlist</p>
+                </div>
+                <a href="#">Nome Playlist</a>
+                <a href="#">Nome Playlist</a>
+                <a href="#">Nome Playlist</a>
+                <a href="#">Nome Playlist</a>
+                <a href="#">Nome Playlist</a>
+                <a href="#">Nome Playlist</a>
+                <a href="#">Nome Playlist</a>
+
+            </div>
+        </nav>
+        <!--------------------------- APP CORE  ----------------------->
+
+        <div id="app-core" class="bg-forestgreen">
+
+            <!-- upgrade bar  -->
+            <div id="upgrade-bar" class="bg-black">
+            </div>
+
+            <!-- core page selector bar  -->
+            <div id="selector-bar" class="d-flex flex-justify-center flex-wrap bg-goldenrod py-16">
+                <a href="#">in evidenza</a>
+                <a href="#">podcast</a>
+                <a href="#">classifiche</a>
+                <a href="#">generi e mood</a>
+                <a href="#">nuove uscite</a>
+                <a href="#">scopri</a>
+            </div>
+
+            <!-- recently played -->
+            <div id="recently-played" class="h-33">
+                <h2>Recently played</h2>
+                <div id="song-row">
+                    <div class="song-container">
+                        <img src="img/metal_lifting.jpg" alt="metal_lifting">
+                        <p>Title</p>
+                        <p>Subtitle</p>
+                    </div>
+                    <div class="song-container">
+                        <img src="img/metal_lifting.jpg" alt="metal_lifting">
+                        <p>Title</p>
+                        <p>Subtitle</p>
+                    </div>
+                    <div class="song-container">
+                        <img src="img/metal_lifting.jpg" alt="metal_lifting">
+                        <p>Title</p>
+                        <p>Subtitle</p>
+                    </div>
+                    <div class="song-container">
+                        <img src="img/metal_lifting.jpg" alt="metal_lifting">
+                        <p>Title</p>
+                        <p>Subtitle</p>
+                    </div>
+                    <div class="song-container">
+                        <img src="img/metal_lifting.jpg" alt="metal_lifting">
+                        <p>Title</p>
+                        <p>Subtitle</p>
+                    </div>
+                    <div class="song-container">
+                        <img src="img/metal_lifting.jpg" alt="metal_lifting">
+                        <p>Title</p>
+                        <p>Subtitle</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Creato per John Doe -->
+            <div id="create-for" class="h-33">
+                <h2>Recently played</h2>
+                <div id="song-row">
+                    <div class="song-container">
+                        <img src="img/metal_lifting.jpg" alt="metal_lifting">
+                        <p>Title</p>
+                        <p>Subtitle</p>
+                    </div>
+                    <div class="song-container">
+                        <img src="img/metal_lifting.jpg" alt="metal_lifting">
+                        <p>Title</p>
+                        <p>Subtitle</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- artisti più popolari -->
+            <div id="create-for" class="h-33">
+                <h2>Recently played</h2>
+                <div id="song-row">
+                    <div class="song-container">
+                        <img src="img/metal_lifting.jpg" alt="metal_lifting">
+                        <p>Title</p>
+                        <p>Subtitle</p>
+                    </div>
+                    <div class="song-container">
+                        <img src="img/metal_lifting.jpg" alt="metal_lifting">
+                        <p>Title</p>
+                        <p>Subtitle</p>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- chiusura core  -->
+        
+        <!--------------------------- FINE APP CORE  ----------------------->
+
+        <!-- FOOTER  -->
         <footer class="bg-red">
         </footer>
     </main>

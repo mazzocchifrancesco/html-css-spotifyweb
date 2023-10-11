@@ -225,8 +225,9 @@
 .mh-500 {min-height: 500px;}
 
 
-.h-100 {height: 100%;}
+.h-33 {height: 33%;}
 .h-50 {height: 50%;}
+.h-100 {height: 100%;}
 .vh-50 {height: 50vh;}
 .vh-100 {height: 100vh;}
 
