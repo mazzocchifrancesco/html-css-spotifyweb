@@ -3,6 +3,7 @@
     --nav-width: 15rem;
     --nav-collapse-width: 4rem;
     --upgrade-bar-height: 5rem;
+    --song-container-width: 13rem;
 
 
 }
@@ -28,7 +29,6 @@ nav a {
 }
 #playlist > a {
     font-size: 0.8rem;
-
 }
 #top-nav {
     overflow-y: auto;
@@ -40,8 +40,6 @@ nav a {
     height: 1.5rem;
     filter: invert(0.5);
 }
-
-
 #square-plus {
     height: 2rem;
     font-size: 2rem;
@@ -112,18 +110,38 @@ nav a {
 
 /* recently played */
 
-#song-row {
+.song-row {
     display: flex;
-    flex-wrap: wrap;
+    justify-content:space-between ;
 }
+
+/* mezzo cheat da fixare -->  */
+#create-for .song-row,
+#most-popular .song-row {
+    width: calc(var(--song-container-width) * 2 + 2rem);;
+}
+/* ****************************** */
 
 .song-container {
     display: flex;
+    position: relative;
     flex-direction: column;
-    height: 100%;
     text-align: center;
-    margin: 0.5rem;
-    width: 14rem;
+    width: var(--song-container-width);
+    margin: 0 0.3rem;
+    min-width: calc(100vw / 6 - var(--nav-width));
+}
+.play-hoover {
+    position: absolute;
+    display: none;
+    width: var(--song-container-width);
+    aspect-ratio: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+
+
+
 }
 
 /* most popular*/
@@ -177,12 +195,33 @@ footer {
     display: flex;
     gap: 10px;
 }
-
+/******************************* HOOVER ******************************************/
+.song-container:hover .play-hoover {
+    display: flex;
+}
+.song-container:hover >  img  {
+    filter: brightness(60%);
+}
 
 
 /******************************* MEDIA QUERY ******************************************/
 
+@media screen and (max-width:992px) {
+
+    .song-row {flex-wrap: wrap;}
+
+}
 @media screen and (max-width:768px) {
+    
+    /* core */
+
+    .song-container {
+        width: 11rem;
+        min-width: 8rem;
+    }
+
+    /* footer */
+
     #left-container .icon-container {flex-wrap: wrap;}
 }
 
