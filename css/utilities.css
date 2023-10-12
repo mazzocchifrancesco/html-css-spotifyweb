@@ -95,6 +95,9 @@
 /* GAP */
 
 .g-10 {gap: 10px;}
+.gx-10 {column-gap: 10px;}
+.gx-16 {column-gap: 16px;}
+
 .g-16 {gap: 16px;}
 
 
@@ -147,6 +150,15 @@
 .fsize-em-2 {font-size: 2em;}
 .fsize-em-2-5 {font-size: 2.5em;}
 .fsize-em-3 {font-size: 3em;}
+
+
+/* REM */
+.fsize-rem-0-75 {font-size: 0.75rem;}
+.fsize-rem-1-25 {font-size: 1.25rem;}
+.fsize-rem-1-5 {font-size: 1.5rem;}
+.fsize-rem-2 {font-size: 2rem;}
+.fsize-rem-2-5 {font-size: 2.5rem;}
+.fsize-rem-3 {font-size: 3rem;}
 
 
 /* font weight  */
