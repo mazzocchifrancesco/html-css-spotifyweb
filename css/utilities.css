@@ -23,6 +23,7 @@
 .flex-start {justify-content: start;}
 .flex-baseline {vertical-align: baseline;}
 .flex-align-around { align-content: space-around;}
+.flex-content-between { align-content: space-between;}
 .flex-wrap { flex-wrap: wrap;} 
 .flex-self-start {align-self: start;}
 
@@ -275,4 +276,5 @@
 .svg-white {filter: invert(1);}
 
 .ofy-auto {overflow-y: auto;}
+.ratio-1 {aspect-ratio: 1;}
 

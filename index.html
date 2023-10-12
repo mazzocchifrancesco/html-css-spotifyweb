@@ -12,45 +12,85 @@
     <title>Spotify</title>
 </head>
 <body>
+
     <div class="d-flex vh-100 flex-wrap">
 
         <!------------------------ SIDE NAVBAR  ------------------>
-        <nav class="d-flex flex-column">
-            <img src="img/logo.svg" alt="logo">
 
-            <!-- nav buttons  -->
-            <div id="nav-button" class="py-16">
-                <a href=""><img src="img/home.svg" alt=""><span>Home</span></a>
-                <a href=""><img src="img/search.svg" alt=""><span>Cerca</span></a>
-                <a href=""><img src="img/libreria.svg" alt=""><span>La tua libreria</span></a>
+        <nav class="d-flex flex-column flex-justify-between">
+
+            <!-- top nav -->
+            <div id="top-nav" class="d-flex flex-column">
+                <img src="img/logo.svg" alt="logo">
+                
+                <!-- nav buttons  -->
+                <div id="nav-button" class="py-16">
+                    <a href=""><img src="img/home.svg" alt=""><span>Home</span></a>
+                    <a href=""><img src="img/search.svg" alt=""><span>Cerca</span></a>
+                    <a href=""><img src="img/libreria.svg" alt=""><span>La tua libreria</span></a>
+
+                </div>
+
+                <!-- playlist  -->
+                <div id="playlist">
+                    <h3>PLAYLIST</h3>
+
+                    <!-- crea playlist  -->
+                    <p class="c-white we-700">PLAYLIST</p>
+                    <div class="d-flex flex-items-center py-16">
+                        <div id="square-plus" class="ratio-1 d-flex flex-justify-center flex-items-center">+</div>
+                        <a href="#" class=" px-16 we-800"> Crea Playlist</a>
+                    </div>
+
+                    <a href="#">Nome Playlist</a>
+                    <a href="#">Nome Playlist</a>
+                    <a href="#">Nome Playlist</a>
+                    <a href="#">Nome Playlist</a>
+                    <a href="#">Nome Playlist</a>
+                    <a href="#">Nome Playlist</a>
+                    <a href="#">Nome Playlist</a>
+
+                </div>
+
+                <!-- mini nav hidden  -->
+                <div class="hidden">
+                    <img src="img/logo-small.svg" alt="logo-small" class="pb-16">
+                    <a href=""><img src="img/home.svg" alt=""></span></a>
+                    <a href=""><img src="img/search.svg" alt=""></a>
+                    <a href=""><img src="img/libreria.svg" alt=""></a>
+                </div>
 
             </div>
 
-            <!-- playlist  -->
-            <div id="playlist">
-                <h3>PLAYLIST</h3>
-
-                <!-- crea playlist  -->
+            <!-- bottom nav -->
+            <div id="bottom-nav" class="d-flex flex-column flex-end pt-16">
+                <span><i class="fa-regular fa-circle-down"></i> Installa app</span>
+                <hr class="my-10">
                 <div class="d-flex flex-items-center">
-                    <div class="p-6 bg-red lh-100">+</div>
-                    <p class="px-16">Crea Playlist</p>
+                    <div id="user-pic" class="circle-pic">
+                        <img src="img/profile.svg" alt="profile">
+                    </div>
+                    <span class="px-16">John Doe</span>
                 </div>
-                <a href="#">Nome Playlist</a>
-                <a href="#">Nome Playlist</a>
-                <a href="#">Nome Playlist</a>
-                <a href="#">Nome Playlist</a>
-                <a href="#">Nome Playlist</a>
-                <a href="#">Nome Playlist</a>
-                <a href="#">Nome Playlist</a>
+
+                <!-- mini nav hidden -->
+                <div class="hidden">
+                    <i class="fa-regular fa-circle-down py-16"></i>
+                    <div id="user-pic" class="circle-pic">
+                        <img src="img/profile.svg" alt="profile">
+                    </div>
+                </div>
 
             </div>
         </nav>
+
         <!--------------------------- APP CORE  ----------------------->
 
         <div id="app-core" class="">
 
             <!-- upgrade bar  -->
-            <div id="upgrade-bar" class="bg-black">
+            <div id="upgrade-bar" class="bg-black d-flex flex-end flex-items-center">
+                <a href="#" id="upgrade-button">EFFETTUA L'UPGRADE</a>
             </div>
 
             <!-- core page selector bar  -->
@@ -64,11 +104,13 @@
             </div>
 
             <div class="p-16">
+
             <!-- recently played -->
                 <div id="recently-played" class="">
                     <div class="title-container">
                         <h2>Recently played</h2>
                     </div>
+
                     <div id="song-row" class="">
                         <div class="song-container">
                             <img src="img/metal_lifting.jpg" alt="metal_lifting">
@@ -156,22 +198,20 @@
         <footer class="d-flex flex-justify-between p-16 flex-items-center">
             
             <!-- left container  -->
-            <div class="d-flex h-100 gx-10 c-white w-20">
+            <div id="left-container" class="d-flex h-100 gx-10 c-white">
                 <img src="img/sinister.jpeg" alt="sinister" class="h-100 py-16">
                 <div class="d-flex flex-justify-center flex-column">
                     <p>Sinister</p>
                     <p>Brano nome</p>
                 </div>
-                <div class="d-flex flex-items-center">
+                <div class="d-flex flex-items-center icon-container">
                     <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="d-flex flex-items-center">
                     <i class="fa-regular fa-folder"></i>
                 </div>
             </div>
 
             <!-- middle container  -->
-            <div class="w-40 h-100">
+            <div id="middle-container" class="w-60 h-100">
 
                 <!-- buttons bar middle -->
                 <div class="d-flex flex-justify-center c-white h-50 flex-items-center gx-16 fsize-rem-1-25">
@@ -186,19 +226,21 @@
                 <div class="d-flex flex-justify-center flex-items-center h-50 c-white gx-10">
                     <div>0.25</div>
                     <div class="complete-bar">
-                        <hr class="progressive-bar">
+                        <div class="progressive-bar"></div>
                     </div>
                     <div>4.35</div>
                 </div>
             </div>
 
             <!-- volume container -->
-            <div id="volume-container" class="w-20 h-100 d-flex flex-items-center gx-10 flex-end c-white">
-                <i class="fa-solid fa-list"></i>
-                <i class="fa-solid fa-desktop"></i>
-                <i class="fa-solid fa-volume-high"></i>
+            <div id="volume-container" class=" h-100 d-flex flex-items-center gx-10 flex-end c-white">
+                <div class="icon-container">                    
+                    <i class="fa-solid fa-list"></i>
+                    <i class="fa-solid fa-desktop"></i>
+                    <i class="fa-solid fa-volume-high"></i>
+                </div>
                 <div class="complete-bar">
-                    <hr class="progressive-bar">
+                    <div class="progressive-bar"></div>
                 </div>
             </div>
         </footer>

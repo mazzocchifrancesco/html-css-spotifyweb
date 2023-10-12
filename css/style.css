@@ -1,7 +1,8 @@
 :root {
-    --footer-height: 90px;
-    --nav-width: 200px;
-    --upgrade-bar-height: 80px;
+    --footer-height: 5.5rem;
+    --nav-width: 15rem;
+    --nav-collapse-width: 4rem;
+    --upgrade-bar-height: 5rem;
 
 
 }
@@ -10,31 +11,72 @@ body {
     font-family: 'Montserrat', sans-serif;}
 /*********************** SIDE NAVBAR ***********************/
 
+.hidden {display: none;}
 nav {
     height: calc(100% - var(--footer-height));
     width: var(--nav-width);
-    padding: 10px;
+    padding: 16px;
     background-color: black;
 }
-nav > img {
-    width: 80%;
-}
-#nav-button a img {height: 1.5rem;}
-#nav-button a,
-#playlist a {
+nav a {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: white;
-    padding: 6px 0;
+    color: #727272;
+    padding: 10px 0;
+    font-weight: 800;
+}
+#playlist > a {
+    font-size: 0.8rem;
+
+}
+#top-nav {
+    overflow-y: auto;
+}
+#top-nav > img {
+    width: 80%;
+}
+#nav-button img {
+    height: 1.5rem;
+    filter: invert(0.5);
 }
 
+
+#square-plus {
+    height: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    background-color: #a3a3a3;
+}
+/* bottom nav */
+#bottom-nav {
+    height: 100px;
+    color: #727272;
+}
+#user-pic img {
+    height: 2rem;
+    width: 100%;
+    background-color:#a3a3a3 ;
+}
+#user-pic {
+    height: 2rem;
+    width: 2rem;
+}
 
 /*********************** UPGRADE BAR ***********************/
 #upgrade-bar {
     width: 100%;
     height: var(--upgrade-bar-height);
-  
+}
+
+#upgrade-button {
+    display: inline-block;
+    padding: 10px 40px;
+    border: 1px solid white;
+    border-radius: 25px;
+    text-decoration: none;
+    color: white;
+    margin-right: 16px;
 }
 
 /*********************** APP CORE ***********************/
@@ -74,15 +116,14 @@ nav > img {
     display: flex;
     flex-wrap: wrap;
 }
-.song-container img {
-}
+
 .song-container {
     display: flex;
     flex-direction: column;
     height: 100%;
     text-align: center;
     margin: 0.5rem;
-    width: 16rem;
+    width: 14rem;
 }
 
 /* most popular*/
@@ -92,7 +133,10 @@ nav > img {
     overflow: hidden;
     aspect-ratio: 1;
 }
-.circle-pic img {width: 100%;}
+.circle-pic img {
+    width: 100%;
+}
+
 /*********************** FOOTER ***********************/
 
 footer {
@@ -100,7 +144,7 @@ footer {
     width: 100%;
     background-color: #282828;
 }
-
+#middle-container {margin: 0 20px;}
 .complete-bar{
     width: 60%;
     background-color: #5d5d5d;
@@ -114,7 +158,9 @@ footer {
     border-radius: 3px;
     border: none;
 }
-
+#volume-container, #left-container {
+    width: 230px;
+}
 #volume-container .complete-bar{
     width: 60%;
     background-color: #5d5d5d;
@@ -126,5 +172,36 @@ footer {
     background-color: #c9c9c9;
     height: 5px;
     border-radius: 3px;
-    border: none;
+}
+.icon-container {
+    display: flex;
+    gap: 10px;
+}
+
+
+
+/******************************* MEDIA QUERY ******************************************/
+
+@media screen and (max-width:768px) {
+    #left-container .icon-container {flex-wrap: wrap;}
+}
+
+
+@media screen and (max-width:576px) {
+
+    #app-core {
+        width: calc(100% - var(--nav-collapse-width));
+    }    
+    nav {
+        width: 4rem;
+    }
+    nav div * {
+        display: none;
+    }
+    .hidden {
+        display: flex;
+        flex-direction: column;
+    }
+    .hidden * {display: block;}
+    #bottom-nav {text-align: center;}
 }
