@@ -4,6 +4,7 @@
     --nav-collapse-width: 4rem;
     --upgrade-bar-height: 5rem;
     --song-container-width: 13rem;
+    --song-container-width-992: 10rem;
     --text-primary-color: #727272;
     --text-primary-color-light: #c9c9c9;
     --progressive-bar-lenght: 15%;
@@ -13,10 +14,8 @@
 
 .text-primary {color: var(--text-primary-color);}
 
+body {    font-family: 'Montserrat', sans-serif;}
 
-
-body {
-    font-family: 'Montserrat', sans-serif;}
 /*********************** SIDE NAVBAR ***********************/
 
 .hidden {display: none;}
@@ -41,9 +40,6 @@ nav a {
 #top-nav {
     overflow-y: auto;
 }
-#top-nav > img {
-    width: 80%;
-}
 #nav-button img {
     height: 1.5rem;
     filter: invert(0.5);
@@ -56,10 +52,7 @@ nav a {
     background-color: var(--text-primary-color);
 }
 /* bottom nav */
-#bottom-nav {
-    height: 100px;
-    color: #727272;
-}
+#bottom-nav { height: 6.5rem;}
 #user-pic img {
     height: 2rem;
     width: 100%;
@@ -103,15 +96,12 @@ nav a {
     font-weight: 600;
     padding: 16px 0 10px 0;
 }
-#app-core p {
-    color: grey;
-}
-#app-core h2 {
-    padding: 6px 0;
-}
+#app-core p {color: var(--text-primary-color);}
+#app-core h2 {padding: 6px 0;}
 .title-container {
     padding: 20px 0;
 }
+
 /* selector bar  */
 
 #selector-bar a{
@@ -242,7 +232,15 @@ a:hover {color: white;}
 /******************************* MEDIA QUERY ******************************************/
 
 @media screen and (max-width:992px) {
-    .song-row {flex-wrap: wrap;}
+    .song-row {
+        flex-wrap: wrap;
+    }
+    .song-container {
+        /* width: var(--song-container-width-992);
+        min-width: calc(100vw / 4 - var(--nav-width)); */
+
+    }
+    
 }
 
 @media screen and (max-width:768px) {
@@ -250,8 +248,8 @@ a:hover {color: white;}
     /* core */
 
     .song-container {
-        width: 11rem;
-        min-width: 8rem;
+        width: calc(100vw / 4 - var(--nav-width));
+        flex-wrap: nowrap;
     }
 
     /* footer */
@@ -268,10 +266,29 @@ a:hover {color: white;}
     .hidden {
         display: flex;
         flex-direction: column;
-        padding-right: 16px;
     }
-    .hidden * {display: block;}
+    .hidden img {width: 2rem;}
+    .hidden * {
+        display: block;
+        margin: auto;
+        padding-left: 0;
+        }
+    #bottom-nav {
+        padding-left: 0;
+    }
     #bottom-nav {text-align: center;}
 }
-
-    
+    .complete-bar {
+        display: flex;
+        flex-direction: row;
+    }
+    .prova::before {
+        content: "\2022";
+        width: 2px;
+        height: 2px;
+        position: absolute;
+        display: inline-block;
+        left: calc(var(--progressive-bar-lenght) - 10px);
+        font-size: 5rem;
+        color: var(--text-primary-color-light);
+    }
