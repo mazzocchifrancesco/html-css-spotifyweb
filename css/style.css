@@ -1,12 +1,19 @@
 :root {
-    --footer-height: 5.5rem;
+    --footer-height: 7rem;
     --nav-width: 15rem;
     --nav-collapse-width: 4rem;
     --upgrade-bar-height: 5rem;
     --song-container-width: 13rem;
-
-
+    --text-primary-color: #727272;
+    --text-primary-color-light: #c9c9c9;
+    --progressive-bar-lenght: 15%;
 }
+
+/* classi root */
+
+.text-primary {color: var(--text-primary-color);}
+
+
 
 body {
     font-family: 'Montserrat', sans-serif;}
@@ -16,14 +23,15 @@ body {
 nav {
     height: calc(100% - var(--footer-height));
     width: var(--nav-width);
-    padding: 16px;
+    padding: 16px 0;
     background-color: black;
 }
+nav .selected {border-left: solid 3px greenyellow;}
 nav a {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #727272;
+    color: var(--text-primary-color);
     padding: 10px 0;
     font-weight: 800;
 }
@@ -39,12 +47,13 @@ nav a {
 #nav-button img {
     height: 1.5rem;
     filter: invert(0.5);
+    margin-right: 8px;
 }
 #square-plus {
     height: 2rem;
     font-size: 2rem;
     font-weight: 600;
-    background-color: #a3a3a3;
+    background-color: var(--text-primary-color);
 }
 /* bottom nav */
 #bottom-nav {
@@ -54,7 +63,7 @@ nav a {
 #user-pic img {
     height: 2rem;
     width: 100%;
-    background-color:#a3a3a3 ;
+    background-color: var(--text-primary-color);
 }
 #user-pic {
     height: 2rem;
@@ -65,6 +74,7 @@ nav a {
 #upgrade-bar {
     width: 100%;
     height: var(--upgrade-bar-height);
+    background-color: #090b12;
 }
 
 #upgrade-button {
@@ -78,7 +88,10 @@ nav a {
 }
 
 /*********************** APP CORE ***********************/
-
+#selector-bar .selected hr {
+    color: greenyellow;
+    width: 40%;
+}
 #app-core {
     width: calc(100% - var(--nav-width));
     height: calc(100% - var(--footer-height));
@@ -104,7 +117,7 @@ nav a {
 #selector-bar a{
     text-decoration: none;
     text-transform: uppercase;
-    padding: 0 10px;
+    padding: 0 10px 5px 10px;
     color: grey;
 }
 
@@ -139,9 +152,6 @@ nav a {
     justify-content: center;
     align-items: center;
     font-size: 4rem;
-
-
-
 }
 
 /* most popular*/
@@ -168,16 +178,17 @@ footer {
     background-color: #5d5d5d;
     height: 5px;
     border-radius: 3px;
+    position: relative;
 }
 .progressive-bar {
-    width: 15%;
-    background-color: #c9c9c9;
+    width: var(--progressive-bar-lenght);
+    background-color: var(--text-primary-color-light);
     height: 5px;
     border-radius: 3px;
     border: none;
 }
 #volume-container, #left-container {
-    width: 230px;
+    width: 250px;
 }
 #volume-container .complete-bar{
     width: 60%;
@@ -187,7 +198,7 @@ footer {
 }
 #volume-container .progressive-bar {
     width: 15%;
-    background-color: #c9c9c9;
+    background-color: var(--text-primary-color-light);
     height: 5px;
     border-radius: 3px;
 }
@@ -195,22 +206,45 @@ footer {
     display: flex;
     gap: 10px;
 }
+.icon-container a {
+    text-decoration: none;
+    color: var(--text-primary-color);
+}
+
 /******************************* HOOVER ******************************************/
-.song-container:hover .play-hoover {
-    display: flex;
-}
-.song-container:hover >  img  {
-    filter: brightness(60%);
-}
 
-
+.song-container:hover .play-hoover {display: flex;}
+.song-container:hover >  img  {filter: brightness(60%);}
+#upgrade-button:hover {transform: scale(1.05);}
+#selector-bar p:hover {color: white;}
+a:hover {color: white;}
+#nav-button a:hover >  img {filter: invert(0);}
+#create-playlist:hover > #square-plus {background-color: white;}
+#create-playlist:hover > a {color: white;}
+#ft-title:hover,
+#ft-artist:hover {
+    color: white;
+    text-decoration: underline;
+}
+.fa-circle-play:hover {transform: scale(1.05);}
+.complete-bar:hover > .progressive-bar {background-color: yellowgreen;}
+.complete-bar:hover > .progressive-bar::after {
+    content: "\2022";
+    width: 2px;
+    height: 2px;
+    position: absolute;
+    top: -1050%;
+    left: calc(var(--progressive-bar-lenght) - 10px);
+    font-size: 5rem;
+    color: var(--text-primary-color-light);
+}
+    
 /******************************* MEDIA QUERY ******************************************/
 
 @media screen and (max-width:992px) {
-
     .song-row {flex-wrap: wrap;}
-
 }
+
 @media screen and (max-width:768px) {
     
     /* core */
@@ -228,19 +262,16 @@ footer {
 
 @media screen and (max-width:576px) {
 
-    #app-core {
-        width: calc(100% - var(--nav-collapse-width));
-    }    
-    nav {
-        width: 4rem;
-    }
-    nav div * {
-        display: none;
-    }
+    #app-core {width: calc(100% - var(--nav-collapse-width));}    
+    nav {width: 4rem;}
+    nav div * {display: none;}
     .hidden {
         display: flex;
         flex-direction: column;
+        padding-right: 16px;
     }
     .hidden * {display: block;}
     #bottom-nav {text-align: center;}
 }
+
+    
