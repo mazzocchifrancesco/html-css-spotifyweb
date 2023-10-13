@@ -227,6 +227,7 @@ a:hover {color: white;}
     left: calc(var(--progressive-bar-lenght) - 10px);
     font-size: 5rem;
     color: var(--text-primary-color-light);
+    display: block;
 }
     
 /******************************* MEDIA QUERY ******************************************/
@@ -281,14 +282,4 @@ a:hover {color: white;}
     .complete-bar {
         display: flex;
         flex-direction: row;
-    }
-    .prova::before {
-        content: "\2022";
-        width: 2px;
-        height: 2px;
-        position: absolute;
-        display: inline-block;
-        left: calc(var(--progressive-bar-lenght) - 10px);
-        font-size: 5rem;
-        color: var(--text-primary-color-light);
     }
