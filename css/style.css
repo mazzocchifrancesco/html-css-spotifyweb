@@ -132,7 +132,7 @@ nav a {
 .play-hoover {
     position: absolute;
     display: none;
-    width: var(--song-container-width);
+    width: 100%;
     aspect-ratio: 1;
     justify-content: center;
     align-items: center;
